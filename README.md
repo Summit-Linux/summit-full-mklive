@@ -1,3 +1,7 @@
+## FORKED FROM void-linux/void-mklive
+
+The summit image builder.
+
 ## The Void Linux image/live/rootfs maker and installer
 
 This repository contains utilities for Void Linux:
