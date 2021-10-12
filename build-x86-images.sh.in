@@ -39,7 +39,7 @@ readonly GNOME_PKGS="$X_PKGS gnome gnome-terminal firefox-esr"
 readonly KDE_PKGS="$X_PKGS kde5 konsole firefox dolphin"
 readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
-readonly SUMMIT_PKGS="$X_PKGS firefox-esr xfce4-terminal thunderbird vlc abiword xbomb lumina pcmanfm lxdm"
+readonly SUMMIT_PKGS="$X_PKGS firefox-esr xfce4-terminal thunderbird vlc abiword xbomb icewm pcmanfm lxdm"
 
 [ ! -x mklive.sh ] && exit 0
 
@@ -92,6 +92,6 @@ if [ "$IMAGE" = kde ]; then
 fi
 if [ "$IMAGE" = summit ]; then
 	if [ ! -e $SUMMIT_IMG ]; then
-		./mklive.sh -a $ARCH -o $SUMMIT_IMG -p "$SUMMIT_PKGS" ${REPO} "$@"
+		./mklive.sh -a $ARCH -o $SUMMIT_IMG -p "$SUMMIT_PKGS" ${REPO} -I ./include/ -T "Summit Linux" "$@"
 	fi
 fi
