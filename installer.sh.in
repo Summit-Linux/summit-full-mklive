@@ -129,7 +129,8 @@ set_option() {
 get_option() {
     echo $(grep -E "^${1}.*" $CONF_FILE|sed -e "s|${1}||")
 }
-
+SOURCE_DONE=1
+set_option SOURCE "local"
 # ISO-639 language names for locales
 iso639_language() {
     case "$1" in
@@ -1352,25 +1353,6 @@ Do you want to reboot the system?" ${YESNOSIZE}
     fi
 }
 
-menu_source() {
-    local src=
-
-    DIALOG --title " Select installation source " \
-        --menu "$MENULABEL" 8 70 0 \
-        "Local" "Packages from ISO image" \
-        "Network" "Base system only, downloaded from official repository"
-    case "$(cat $ANSWER)" in
-        "Local") src="local";;
-        "Network") src="net";
-            if [ -z "$NETWORK_DONE" ]; then
-                menu_network;
-            fi;;
-        *) return 1;;
-    esac
-    SOURCE_DONE=1
-    set_option SOURCE $src
-}
-
 menu() {
     local AFTER_HOSTNAME
     if [ -z "$DEFITEM" ]; then
@@ -1385,7 +1367,6 @@ menu() {
             --menu "$MENULABEL" 10 70 0 \
             "Keyboard" "Set system keyboard" \
             "Network" "Set up the network" \
-            "Source" "Set source installation" \
             "Hostname" "Set system hostname" \
             "Timezone" "Set system time zone" \
             "RootPassword" "Set system root password" \
@@ -1403,7 +1384,6 @@ menu() {
             --menu "$MENULABEL" 10 70 0 \
             "Keyboard" "Set system keyboard" \
             "Network" "Set up the network" \
-            "Source" "Set source installation" \
             "Hostname" "Set system hostname" \
             "Locale" "Set system locale" \
             "Timezone" "Set system time zone" \
