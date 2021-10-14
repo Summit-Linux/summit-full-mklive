@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Install Summit Linux
-Comment=Installer for Summit Linux
-Exec=sudo void-installer
-Terminal=true
