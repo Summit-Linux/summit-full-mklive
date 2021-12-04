@@ -39,7 +39,7 @@ readonly GNOME_PKGS="$X_PKGS gnome gnome-terminal firefox-esr"
 readonly KDE_PKGS="$X_PKGS kde5 konsole firefox dolphin"
 readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
-readonly SUMMIT_PKGS="$X_PKGS epiphany xfce4-terminal thunderbird vlc abiword xbomb icewm pcmanfm lxdm xarchiver"
+readonly SUMMIT_PKGS="$X_PKGS firefox xfce4 thunderbird vlc libreoffice leafpad sddm xarchiver htop gimp octoxbps"
 
 [ ! -x mklive.sh ] && exit 0
 
