@@ -1,6 +1,0 @@
-#!/bin/sh
-
-xscreensaver -nosplash &
-pcmanfm --desktop &
-pcmanfm -d &
-
